@@ -1,0 +1,403 @@
+# READY-TO-USE PROMPT - SUBTOPIC #12
+## Addition and Subtraction - Mental addition using number bonds
+
+**Copy the entire prompt below and paste into your AI model (GPT-4, Claude, etc.)**
+
+---
+
+```
+You are an expert UK 11+ mathematics content creator. Generate 15 high-quality multiple-choice questions following these exact specifications:
+
+═══════════════════════════════════════════════════════════════════════
+📌 TOPIC & SUBTOPIC DETAILS:
+═══════════════════════════════════════════════════════════════════════
+
+TOPIC_ID: MATHS_TOPIC_002
+TOPIC_NAME: Addition and Subtraction
+TOPIC_STRAPI_ID: 2
+
+SUBTOPIC_ID: SUBTOPIC_0012
+SUBTOPIC_NAME: Mental addition using number bonds (to 10, 20, 100, 1000)
+SUBTOPIC_STRAPI_ID: 12
+
+DIFFICULTY_LEVEL: foundation
+QUESTION_ID_PREFIX: ADD
+TARGET_QUESTION_COUNT: 15
+ORDER_INDEX: 1
+ESTIMATED_TIME_MINUTES: 20
+
+═══════════════════════════════════════════════════════════════════════
+🎲 CRITICAL: RANDOMIZE CORRECT ANSWERS
+═══════════════════════════════════════════════════════════════════════
+
+IMPORTANT: Do NOT make all correct answers the same option!
+
+REQUIREMENT:
+- Correct answers must be VARIED across A, B, C, D, and E
+- Use natural randomization - no fixed distribution required
+- Just ensure variety - not all A, not all B, etc.
+
+RANDOMIZATION STRATEGY:
+1. For each question, determine the correct answer first
+2. Randomly assign it to any option (A, B, C, D, or E)
+3. Fill remaining options with plausible distractors
+4. Avoid predictable patterns
+
+EXAMPLE: Natural random sequence might look like:
+Q1: C, Q2: E, Q3: B, Q4: D, Q5: A, Q6: E, Q7: C, Q8: B, Q9: D, Q10: A,
+Q11: C, Q12: E, Q13: B, Q14: A, Q15: D
+
+This creates realistic exam conditions with natural variation.
+
+═══════════════════════════════════════════════════════════════════════
+📊 REQUIREMENTS:
+═══════════════════════════════════════════════════════════════════════
+
+1. DIFFICULTY DISTRIBUTION:
+   - 5 Easy (basic number bonds, simple additions)
+   - 7 Medium (bridging tens, two-digit numbers)
+   - 3 Hard (complex strategies, three-digit numbers)
+
+
+2. QUESTION TYPE DISTRIBUTION:
+   - 9 standard (60%) - Direct mental addition questions
+   - 6 word_problem (40%) - Real-world UK contexts
+   - 0 image-based - Not needed for this subtopic
+   
+   DISTRIBUTION BY DIFFICULTY:
+   - Easy (5 questions): 3 standard, 2 word_problem
+   - Medium (7 questions): 4 standard, 3 word_problem
+   - Hard (3 questions): 2 standard, 1 word_problem
+
+3. SPECIFIC SKILLS TO TEST:
+   ✓ Number bonds to 10 (e.g., 7 + 3, 6 + 4, 8 + 2)
+   ✓ Number bonds to 20 (e.g., 13 + 7, 16 + 4, 18 + 2)
+   ✓ Number bonds to 100 (e.g., 60 + 40, 35 + 65, 78 + 22)
+   ✓ Number bonds to 1,000 (e.g., 600 + 400, 350 + 650)
+   ✓ Making tens strategy (8 + 7 = 8 + 2 + 5)
+   ✓ Bridging through multiples of 10/100
+   ✓ Using doubles and near doubles
+   ✓ Partitioning numbers for mental addition
+   ✓ Compensation method (round and adjust)
+
+4. NUMBER BOND CONCEPTS:
+   - Bonds to 10: 1+9, 2+8, 3+7, 4+6, 5+5
+   - Bonds to 20: 11+9, 12+8, 13+7, 14+6, 15+5
+   - Bonds to 100: 10+90, 20+80, 30+70, 40+60, 50+50
+   - Bonds to 1000: 100+900, 200+800, 300+700, 400+600
+
+5. KEY UNDERSTANDING:
+   MENTAL STRATEGIES FOR QUICK ADDITION:
+   - Make ten first: 8 + 7 = (8 + 2) + 5 = 15
+   - Bridge through ten: 37 + 8 = 37 + 3 + 5 = 45
+   - Partition: 45 + 38 = (40+30) + (5+8) = 70 + 13 = 83
+   - Compensation: 29 + 36 = 30 + 36 - 1 = 65
+
+6. COMMON ERRORS FOR DISTRACTORS:
+   - Miscounting when bridging through ten
+   - Forgetting to add the ones after making ten
+   - Adding only the larger parts
+   - Incorrect number bonds (7 + 3 = 9)
+   - Place value errors (60 + 40 = 10)
+   - Forgetting compensation amount
+   - Incorrect doubling
+   - Breaking numbers incorrectly
+
+7. UK CONTEXTS FOR WORD PROBLEMS:
+   - Money problems using pounds (£) and pence (p)
+   - British sports (football scores, cricket runs)
+   - UK cities and landmarks
+   - British school contexts
+   - UK measurements (metres, centimetres)
+   - British food and shopping
+
+8. CONTENT QUALITY:
+   - Age-appropriate language (8-10 year-olds)
+   - Clear questions
+   - Plausible distractors
+   - Detailed HTML explanations
+   - Step-by-step working
+   - Helpful hints
+   - Time: 60-90 (easy), 90-120 (medium), 120-180 (hard)
+
+9. QUESTION ID PATTERN:
+   - Format: MATHS_ADD_[sequential 3-digit number]
+   - Start from: MATHS_ADD_001
+   - Sequence: MATHS_ADD_001 to MATHS_ADD_015
+
+═══════════════════════════════════════════════════════════════════════
+📋 OUTPUT FORMAT - EXCEL FILE (24 COLUMNS):
+═══════════════════════════════════════════════════════════════════════
+
+FILE NAME: MATHS_TOPIC002_SUBTOPIC0012_questions.xlsx
+SHEET NAME: Questions
+
+COLUMNS (in exact order):
+1. questionId
+2. topic (use NUMBER: 2)
+3. subtopic (use NUMBER: 12)
+4. questionSubtype
+5. questionText
+6. questionInstruction
+7. answerOptions (JSON component)
+8. correctAnswer
+9. mainImage
+10. imageAltText
+11. hasLabels
+12. labelInfo
+13. explanation (JSON component)
+14. hint (JSON component)
+15. difficulty
+16. estimatedTimeSeconds
+17. points
+18. examFormats
+19. compatibleSchools
+20. questionSet
+21. setOrder
+22. tags (JSON array)
+23. isVerified
+24. version
+
+═══════════════════════════════════════════════════════════════════════
+🔧 CRITICAL JSON FORMATS:
+═══════════════════════════════════════════════════════════════════════
+
+FORMAT 1 - answerOptions:
+{"optionA": "answer", "optionB": "answer", "optionC": "answer", "optionD": "answer", "optionE": "answer"}
+
+FORMAT 2 - explanation:
+{"summary": "Brief summary", "detailedSolution": "<p>HTML with working steps</p>", "workingSteps": [{"step": 1, "description": "First step", "formula": "8 + 2 = 10"}, {"step": 2, "description": "Next step", "formula": "10 + 5 = 15"}], "visualAid": null}
+
+FORMAT 3 - hint:
+{"hintText": "Hint", "revealCondition": "on_request"}
+
+FORMAT 4 - tags:
+["mental_math", "number_bonds", "addition"]
+
+═══════════════════════════════════════════════════════════════════════
+🎯 NUMBER BONDS & MENTAL ADDITION CONCEPTS:
+═══════════════════════════════════════════════════════════════════════
+
+NUMBER BONDS - PAIRS THAT MAKE A TARGET:
+
+BONDS TO 10:
+1+9, 2+8, 3+7, 4+6, 5+5
+6+4, 7+3, 8+2, 9+1, 10+0
+
+BONDS TO 20:
+11+9, 12+8, 13+7, 14+6, 15+5
+16+4, 17+3, 18+2, 19+1, 20+0
+
+BONDS TO 100:
+10+90, 20+80, 30+70, 40+60, 50+50
+25+75, 35+65, 45+55, 78+22, etc.
+
+BONDS TO 1000:
+100+900, 200+800, 300+700, 400+600, 500+500
+250+750, 350+650, 450+550, 780+220, etc.
+
+MENTAL STRATEGIES:
+
+STRATEGY 1: Make Ten First
+Example: 8 + 7
+- Split 7 into 2 and 5
+- 8 + 2 = 10
+- 10 + 5 = 15
+
+STRATEGY 2: Bridging Through Ten
+Example: 37 + 8
+- How much to next ten? 3
+- 37 + 3 = 40
+- 8 - 3 = 5
+- 40 + 5 = 45
+
+STRATEGY 3: Using Doubles
+Example: 6 + 7
+- Double 6 = 12
+- 7 is one more than 6
+- 12 + 1 = 13
+
+STRATEGY 4: Partitioning
+Example: 45 + 38
+- Break into tens and ones
+- 40 + 30 = 70
+- 5 + 8 = 13
+- 70 + 13 = 83
+
+STRATEGY 5: Compensation
+Example: 29 + 36
+- Round 29 up to 30
+- 30 + 36 = 66
+- Subtract 1 (compensate)
+- 66 - 1 = 65
+
+═══════════════════════════════════════════════════════════════════════
+📝 COMPLETE EXAMPLE (Question 1 - Easy):
+═══════════════════════════════════════════════════════════════════════
+
+questionId: MATHS_ADD_001
+topic: 2
+subtopic: 12
+questionSubtype: standard
+questionText: What is 8 + 7?
+questionInstruction: Choose the correct answer.
+answerOptions: {"optionA": "13", "optionB": "14", "optionC": "15", "optionD": "16", "optionE": "17"}
+correctAnswer: C
+mainImage: [empty]
+imageAltText: [empty]
+hasLabels: FALSE
+labelInfo: [empty]
+explanation: {"summary": "Make ten first, then add remaining", "detailedSolution": "<p>To add 8 + 7 mentally:</p><ul><li>Break 7 into 2 and 5</li><li>8 + 2 = 10 (make ten first)</li><li>10 + 5 = 15</li></ul><p>Answer: <strong>15</strong></p><p>Remember: Making ten first is a quick mental strategy!</p>", "workingSteps": [{"step": 1, "description": "Break 7 into parts", "formula": "7 = 2 + 5"}, {"step": 2, "description": "Add to make ten", "formula": "8 + 2 = 10"}, {"step": 3, "description": "Add remaining", "formula": "10 + 5 = 15"}], "visualAid": null}
+hint: {"hintText": "Try making ten first. How much do you need to add to 8 to make 10?", "revealCondition": "on_request"}
+difficulty: easy
+estimatedTimeSeconds: 60
+points: 1
+examFormats: [empty]
+compatibleSchools: [empty]
+questionSet: [empty]
+setOrder: [empty]
+tags: ["mental_math", "number_bonds", "addition", "making_tens"]
+isVerified: FALSE
+version: 1
+
+═══════════════════════════════════════════════════════════════════════
+✅ VALIDATION CHECKLIST:
+═══════════════════════════════════════════════════════════════════════
+
+For EVERY question:
+✓ questionId: MATHS_ADD_001 through MATHS_ADD_015
+✓ topic: 2, subtopic: 12 (NUMBERS)
+✓ Number bond concepts correct
+✓ Mental strategies demonstrated
+✓ Correct answers VARIED across A-E
+✓ explanation: Shows working steps
+✓ difficulty: easy (5), medium (7), hard (3)
+✓ UK contexts (£, metres, British cities)
+
+═══════════════════════════════════════════════════════════════════════
+🎯 QUESTION VARIETY:
+═══════════════════════════════════════════════════════════════════════
+
+QUESTION TYPES:
+
+TYPE 1: Direct Number Bonds (5 questions)
+"What is 7 + 3?"
+"Which pair makes 20: 12 + ___?"
+Answer: 10, 8
+
+TYPE 2: Making Ten Strategy (3 questions)
+"Use making ten to solve 8 + 7"
+Show: 8 + 2 + 5 = 15
+
+TYPE 3: Bridging Through Tens (2 questions)
+"Add 37 + 8 mentally"
+Method: 37 + 3 + 5 = 45
+
+TYPE 4: Word Problems - Money (2 questions)
+"Sarah has £45. She earns £38 more. Total?"
+Answer: £83
+
+TYPE 5: Word Problems - Collections (2 questions)
+"Tom has 67 cards, gets 28 more..."
+
+TYPE 6: Using Doubles (1 question)
+"Use doubles to solve 6 + 7"
+Method: Double 6 = 12, plus 1 = 13
+
+NUMBER RANGES:
+- Easy: Bonds to 10 and 20
+- Medium: Two-digit numbers (20-99)
+- Hard: Three-digit numbers (100-999)
+
+BOND LEVELS TO INCLUDE:
+- Bonds to 10: 3 questions
+- Bonds to 20: 3 questions
+- Bonds to 100: 5 questions
+- Bonds to 1000: 4 questions
+
+DISTRACTOR STRATEGIES:
+- Option B: Off by one
+- Option C: Adding incorrectly
+- Option D: Place value error
+- Option E: Incomplete calculation
+
+UK CONTEXTS:
+- Money: "Pocket money £35, birthday £25"
+- Sports: "Football team scored 47 goals, then 28"
+- School: "Class has 45 books, gets 38 more"
+- Collections: "67 stickers + 28 stickers"
+
+═══════════════════════════════════════════════════════════════════════
+🚀 GENERATE ALL 15 QUESTIONS NOW:
+═══════════════════════════════════════════════════════════════════════
+
+Create Excel file with:
+- Questions MATHS_ADD_001 to MATHS_ADD_015
+- Mix of direct bonds, strategies, word problems
+- Real-world UK contexts (£, metres)
+- 5 easy, 7 medium, 3 hard
+- VARIED correct answers
+- Clear explanations with mental strategies
+
+CRITICAL: Demonstrate different mental strategies!
+
+OUTPUT: MATHS_TOPIC002_SUBTOPIC0012_questions.xlsx
+
+BEGIN GENERATION NOW.
+```
+
+---
+
+## ✅ WHAT THIS GENERATES
+
+**File:** `MATHS_TOPIC002_SUBTOPIC0012_questions.xlsx`
+
+**Content:** 15 number bond and mental addition questions:
+- Direct number bonds
+- Mental strategies
+- Real-world UK contexts
+
+**Question IDs:** MATHS_ADD_001 to MATHS_ADD_015
+
+---
+
+## 🎯 KEY CONCEPT: NUMBER BONDS
+
+### **Number Bonds:**
+```
+TO 10:  1+9, 2+8, 3+7, 4+6, 5+5
+TO 20:  11+9, 12+8, 13+7, 14+6, 15+5
+TO 100: 10+90, 20+80, 30+70, 40+60, 50+50
+TO 1000: 100+900, 200+800, 300+700, 400+600
+```
+
+### **Mental Strategy:**
+```
+MAKE TEN FIRST: 8 + 7 = (8+2) + 5 = 15
+```
+
+---
+
+## 📊 CRITICAL STRATEGIES
+
+| Strategy | Example | Result |
+|----------|---------|--------|
+| Make Ten | 8 + 7 = 8+2+5 | 15 |
+| Bridge | 37 + 8 = 37+3+5 | 45 |
+| Doubles | 6 + 7 = (6×2)+1 | 13 |
+| Partition | 45+38 = 70+13 | 83 |
+
+---
+
+## 📈 PROGRESS
+
+| Subtopics | Questions | IDs | Total |
+|-----------|-----------|-----|-------|
+| Topic 1 | 165 | PLV_001-165 | 165 |
+| #12 | 15 | ADD_001-015 | **180** |
+
+**Progress:** 180/4,065 = **4.4%** 🎉
+
+---
+
+**READY FOR SUBTOPIC #12!** 🚀

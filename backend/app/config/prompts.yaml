@@ -1,0 +1,25 @@
+generate_prompt: |
+  Generate EXACTLY two similar math MCQ questions.
+
+  Rules:
+  - Same concept
+  - Same difficulty
+  - 4 options labeled A, B, C, D
+  - Include step by step explanation
+  - Return ONLY valid JSON
+  JSON FORMAT:
+  {
+    "similarQuestions": [
+      {
+        "question": "string",
+        "options": {"A":"1","B":"2","C":"3","D":"4"},
+        "correctAnswer": "A",
+        "explanation": "string",
+        "difficulty": "Easy"
+      }
+    ]
+  }
+
+  Original Question: {question}
+  Options: {options}
+  Correct Answer: {correct}
