@@ -215,28 +215,64 @@ Authentication, rate limiting, and input validation should be added before produ
 
 ## 📁 Project Structure
 
-Root layout (simplified):
+Updated project structure (root: Math_Om). Use this as the canonical reference for the repository layout — adjust filenames and locations if your local repository differs.
 
-math-ai-question-generator/
-├── backend/
-│   ├── app/
-│   │   ├── main.py
-│   │   ├── routes.py
-│   │   ├── db.py
-│   │   ├── services/
-│   │   │   └── ai_services.py
-│   │   └── config/
-│   │       ├── ai_config.yaml
-│   │       └── prompts.yaml
-│   ├── tests/
-│   ├── requirements.txt
-│   └── .env.example
-├── src/
-├── package.json
-├── README.md
-└── vite.config.js
+Math_Om/
+├── backend/  
+│   ├── app/  
+│   │   ├── main.py               # FastAPI application entrypoint  
+│   │   ├── routes.py             # API route definitions  
+│   │   ├── db.py                 # Database connection utilities  
+│   │   ├── ai.py                 # Top-level AI integration (request handlers)  
+│   │   │  
+│   │   ├── services/  
+│   │   │   └── ai_services.py    # Groq integration & prompt handling  
+│   │   │  
+│   │   ├── config/  
+│   │   │   ├── prompts.yaml  
+│   │   │   └── ai_config.yaml  
+│   │   │  
+│   │   └── __init__.py  
+│   │  
+│   ├── tests/  
+│   │   └── test_solve_math.py  
+│   │  
+│   ├── requirements.txt  
+│   ├── .env.example  
+│   └── conftest.py  
+│  
+├── src/   (Frontend)  
+│   ├── App.jsx  
+│   ├── main.jsx  
+│   │  
+│   ├── components/  
+│   │   ├── QuestionSelector.jsx  
+│   │   ├── QuestionCard.jsx  
+│   │   ├── SelectedQuestionCard.jsx  
+│   │   ├── GenerateButton.jsx  
+│   │   ├── GeneratedQuestions.jsx  
+│   │   └── SkeletonQuestion.jsx  
+│   │  
+│   ├── lib/  
+│   │   └── api.js  
+│   │  
+│   ├── utils/  
+│   │   └── questionGenerator.js  
+│   │  
+│   └── index.css  
+│  
+├── public/  
+│  
+├── package.json  
+├── vite.config.js  
+├── tailwind.config.js  
+└── README.md
 
-Refer to in-file module docstrings and type hints for implementation details.
+Notes and guidance:
+- The backend exposes the API from `backend/app/main.py`. Keep `ai.py` for request-level AI handlers and `services/ai_services.py` for the integration, prompt assembly, and validation logic.
+- Tests and test fixtures live under `backend/tests/` and `backend/conftest.py`.
+- The frontend is located in `src/` and is a standard Vite + React layout. `lib/api.js` centralizes API calls; `utils/questionGenerator.js` contains client-side generation helpers and input normalization.
+- Keep environment files and secrets out of version control; commit `.env.example` only.
 
 ---
 
@@ -293,4 +329,4 @@ This project is released under the MIT License. See the LICENSE file for details
 
 ---
 
-If you need a trimmed README variant for a GitHub repository description or help formatting badges, I can produce one optimized for the repository landing page.
+If you want, I can update the README in the repository to this corrected structure (create a branch and open a PR). Tell me the repo owner and confirm you want me to create the commit and PR.  
