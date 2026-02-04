@@ -321,11 +321,5 @@ Guidelines:
 - Write descriptive commit messages.
 - Ensure linters and tests pass before submitting.
 
----
 
-## 📄 License
-
-This project is released under the MIT License. See the LICENSE file for details.
-
----
 
