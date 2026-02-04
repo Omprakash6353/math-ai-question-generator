@@ -1,239 +1,221 @@
-🧮 AI-Powered Math Question Generator & Practice System
+# 📌 Introduction
 
-An intelligent, full-stack web application that allows students to practice math questions, receive instant feedback with step-by-step explanations, and generate similar questions using AI.
+Math AI Question Generator is a production-structured, full‑stack web application for practicing math problems with instant evaluation, step‑by‑step explanations, and AI‑generated similar questions. It is designed for correctness, clarity, and scalability.
 
-Built with React + FastAPI + MongoDB + Groq LLM, designed for scalability, correctness, and clarity.
+This repository includes a React + Vite frontend, a FastAPI backend, a MongoDB question bank, and an AI generation service that uses the Groq LLM API.
 
-⸻
+---
 
-📌 What This Project Does
-	•	Loads math questions from a database
-	•	Displays them in an interactive UI
-	•	Allows users to select an answer
-	•	Instantly evaluates correctness
-	•	Shows step-by-step explanations
-	•	Generates two similar questions using AI
-	•	Allows practicing generated questions the same way
+## 📋 Table of Contents
 
-⚠️ This is not a demo project — it follows real production structure.
+- [📌 Introduction](#-introduction)  
+- [🌟 Features](#-features)  
+- [🏗️ Architecture](#-architecture)  
+- [🔧 Technologies Used](#-technologies-used)  
+- [📋 Prerequisites](#-prerequisites)  
+- [🚀 Installation](#-installation)  
+- [⚙️ Configuration](#-configuration)  
+- [📖 Usage](#-usage)  
+- [🎯 API Endpoints](#-api-endpoints)  
+- [🖥️ Frontend UI Overview](#-frontend-ui-overview)  
+- [📁 Project Structure](#-project-structure)  
+- [🧪 Testing](#-testing)  
+- [🐛 Troubleshooting](#-troubleshooting)  
+- [🤝 Contributing](#-contributing)  
+- [📄 License](#-license)
 
-⸻
+---
 
-📋 Table of Contents
-	•	🌟 Features
-	•	🏗️ Architecture
-	•	🔧 Technologies Used
-	•	📋 Prerequisites
-	•	🚀 Installation
-	•	⚙️ Configuration
-	•	📖 Usage
-	•	🎯 API Endpoints
-	•	🖥️ Frontend UI Overview
-	•	📁 Project Structure
-	•	🧪 Testing
-	•	🐛 Troubleshooting
-	•	🤝 Contributing
-	•	📄 License
+## 🌟 Features
 
-⸻
+- Intelligent question practice driven from a centralized question bank.
+- Multiple choice questions (A, B, C, D) with immediate correctness feedback.
+- Step‑by‑step explanations shown after answer selection.
+- AI-generated similar questions that preserve concept and difficulty while changing numerical values.
+- Clean, responsive UI with skeleton loading states and clear answer locking semantics.
+- Production-aligned layout and configuration for deployability.
 
-🌟 Features
-
-🧠 Intelligent Question Practice
-	•	Dynamic question loading from MongoDB
-	•	MCQ format (A, B, C, D)
-	•	Correct / wrong answer detection
-	•	Answer locking after selection
-
-📘 Step-by-Step Explanations
-	•	Explanation shown after answer selection
-	•	Works for both correct and wrong answers
-	•	Focused on learning, not guessing
-
-🤖 AI-Generated Similar Questions
-	•	Uses Groq LLM
-	•	Generates 2 new questions
-	•	Ensures:
-	•	Same concept
-	•	Same difficulty
-	•	Different numbers
-	•	Includes:
-	•	Correct option
-	•	Explanation
-	•	Difficulty tag
-
-🎨 Modern UI
-	•	React + Vite + Tailwind
-	•	Card-based layout
-	•	Skeleton loaders
-	•	Clean UX
+---
 
 ## 🏗️ Architecture
+
+The high-level architecture diagram:
 
 ```mermaid
 graph TB
     A[User - Browser] --> B[React Frontend]
     B --> C[FastAPI Backend]
-
     C --> D[MongoDB Question Bank]
     D --> C
-
     C --> E[Answer Validation Logic]
     E --> F[Correct / Wrong + Explanation]
     F --> B
-
-    C --> G[AI Question Generator Service]
+    C --> G[AI Question Generator]
     G --> H[Groq LLM API]
     H --> G
-
     G --> I[Generated Similar Questions]
     I --> C
-    C --> B ```
-***
+    C --> B
+```
 
-🔧 Technologies Used
+---
 
-Frontend
-	•	React
-	•	Vite
-	•	Tailwind CSS
-	•	JavaScript (ES6+)
+## 🔧 Technologies Used
 
-Backend
-	•	FastAPI
-	•	Python 3.9+
-	•	Pydantic
-	•	Uvicorn
+- Frontend
+  - [React](https://react.dev/)
+  - [Vite](https://vitejs.dev/)
+  - [Tailwind CSS](https://tailwindcss.com/)
+  - [Node.js](https://nodejs.org/)
+  - [JavaScript (ES6+)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-Database
-	•	MongoDB
+- Backend
+  - [FastAPI](https://fastapi.tiangolo.com/)
+  - [Python](https://www.python.org/)
+  - [Pydantic](https://pydantic-docs.helpmanual.io/)
+  - [Uvicorn](https://www.uvicorn.org/)
 
-AI
-	•	Groq LLM API
-	•	YAML-based prompt management
-	•	Output validation
+- Database
+  - [MongoDB](https://www.mongodb.com/)
 
-Testing
-	•	Pytest
+- AI
+  - [Groq](https://groq.com/) (Groq LLM API)
+  - YAML-based prompt management and output validation
 
-⸻
+- Testing
+  - [Pytest](https://pytest.org/)
 
-📋 Prerequisites
+---
 
-System Requirements
-	•	Node.js 18+
-	•	Python 3.9+
-	•	MongoDB (local or Atlas)
-	•	Internet connection
+## 📋 Prerequisites
 
-Supported OS
+- Node.js 18+ ([download](https://nodejs.org/))
+- Python 3.9+ ([download](https://www.python.org/))
+- MongoDB (local or Atlas) ([docs](https://www.mongodb.com/))
+- Internet access for external API (Groq)
 
-✅ macOS
-✅ Linux
-✅ Windows 10 / 11
+Supported OS: macOS, Linux, Windows 10/11.
 
-⸻
+---
 
-🚀 Installation
+## 🚀 Installation
 
-1️⃣ Clone Repository
+1. Clone the repository:
 
+```bash
 git clone https://github.com/Omprakash6353/math-ai-question-generator.git
 cd math-ai-question-generator
+```
 
+2. Backend setup:
 
-⸻
-
-2️⃣ Backend Setup
-
+```bash
 cd backend
 python -m venv venv
-
-Activate venv:
-
-macOS / Linux
-
+# Activate the virtual environment:
+# macOS / Linux
 source venv/bin/activate
-
-Windows
-
-venv\Scripts\activate
-
-Install dependencies:
-
+# Windows (PowerShell)
+venv\Scripts\Activate.ps1
+# Install dependencies
 pip install -r requirements.txt
+```
 
+3. Frontend setup:
 
-⸻
-
-3️⃣ Frontend Setup
-
+```bash
 cd ..
 npm install
+```
 
+---
 
-⸻
+## ⚙️ Configuration
 
-⚙️ Configuration
+Create a `.env` file inside `backend/` (do not commit secrets):
 
-Create .env inside backend/:
-
+```
 GROQ_API_KEY=your_groq_api_key_here
 MONGO_URI=mongodb://localhost:27017
+```
 
+- GROQ_API_KEY: API key for Groq LLM access.
+- MONGO_URI: MongoDB connection string (use Atlas or local instance).
 
-⸻
+Follow best practices: use secret managers for production and restrict API key scopes.
 
-📖 Usage
+---
 
-Start Backend
+## 📖 Usage
 
+Start the backend (development):
+
+```bash
 cd backend
 source venv/bin/activate   # macOS/Linux
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
 
-Backend:
+- Backend: http://localhost:8000  
+- Swagger UI (OpenAPI): http://localhost:8000/docs
 
-http://localhost:8000
+Start the frontend:
 
-Swagger:
-
-http://localhost:8000/docs
-
-
-⸻
-
-Start Frontend
-
+```bash
 npm run dev
+```
 
-Frontend:
+- Frontend (Vite): http://localhost:5173
 
-http://localhost:5173
+---
 
+## 🎯 API Endpoints
 
-⸻
+Standard endpoints provided by the backend:
 
-🎯 API Endpoints
+- GET /questions — List questions (pagination as applicable)
+- GET /question/{id} — Retrieve a single question by id
+- POST /generate — Generate AI-similar questions
 
-Questions
-	•	GET /questions
-	•	GET /question/{id}
+Request/response sample for answer evaluation:
 
-AI Generation
-	•	POST /generate
-
+```json
 {
   "question": "string",
   "options": { "A": "...", "B": "...", "C": "...", "D": "..." },
   "correct": "A",
   "userAnswer": "B"
 }
+```
 
+For AI generation, POST /generate accepts an existing question payload and returns two validated, similar questions with:
+- question text
+- options
+- correct option
+- explanation
+- difficulty tag
 
-⸻
+Authentication, rate limiting, and input validation should be added before production use.
 
-📁 Project Structure
+---
+
+## 🖥️ Frontend UI Overview
+
+- Card-based question view with:
+  - Question text
+  - Options A–D
+  - Answer selection and visual locking
+  - Step-by-step explanation panel
+  - Buttons to generate and practice AI-generated questions
+- Responsive layout (mobile-first)
+- Skeleton loaders while fetching data
+- Accessibility: keyboard navigation, semantic HTML, ARIA where applicable
+
+---
+
+## 📁 Project Structure
+
+Root layout (simplified):
 
 math-ai-question-generator/
 ├── backend/
@@ -254,34 +236,61 @@ math-ai-question-generator/
 ├── README.md
 └── vite.config.js
 
+Refer to in-file module docstrings and type hints for implementation details.
 
-⸻
+---
 
-🧪 Testing
+## 🧪 Testing
 
+Backend tests (pytest):
+
+```bash
 cd backend
+source venv/bin/activate
 pytest
+```
 
+- Aim for unit tests for validation, answer-checking logic, and AI output validation.
+- Integration tests should cover API contracts and basic end-to-end flows.
 
-⸻
+---
 
-🐛 Troubleshooting
-	•	Backend not starting → check venv + Python version
-	•	AI not generating → check GROQ_API_KEY
-	•	Frontend blank → backend must be running
+## 🐛 Troubleshooting
 
-⸻
+- Backend not starting:
+  - Verify virtual environment is active and Python version >= 3.9.
+  - Check installed packages in requirements.txt.
 
-📄 License
+- AI generation failing:
+  - Confirm GROQ_API_KEY is set and has required access.
+  - Inspect request/response logs for rate limits or schema issues.
 
-MIT License — free to use and modify.
+- Frontend shows blank page:
+  - Ensure backend is running and CORS is configured if the frontend consumes the API.
+  - Check browser console for JS errors and Vite terminal for build errors.
 
-⸻
+---
 
-⭐ Final Note
+## 🤝 Contributing
 
-This project is:
-	•	✅ Interview-ready
-	•	✅ Mentor-ready
-	•	✅ Production-structured
+Contributions are welcome. Follow these steps:
 
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feat/my-feature`
+3. Write tests and documentation for your change.
+4. Open a pull request with a clear description and linked issue (if applicable).
+
+Guidelines:
+- Keep commits small and focused.
+- Write descriptive commit messages.
+- Ensure linters and tests pass before submitting.
+
+---
+
+## 📄 License
+
+This project is released under the MIT License. See the LICENSE file for details.
+
+---
+
+If you need a trimmed README variant for a GitHub repository description or help formatting badges, I can produce one optimized for the repository landing page.
