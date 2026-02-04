@@ -329,4 +329,3 @@ This project is released under the MIT License. See the LICENSE file for details
 
 ---
 
-If you want, I can update the README in the repository to this corrected structure (create a branch and open a PR). Tell me the repo owner and confirm you want me to create the commit and PR.  
