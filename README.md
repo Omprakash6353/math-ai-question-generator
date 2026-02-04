@@ -68,10 +68,9 @@ Built with React + FastAPI + MongoDB + Groq LLM, designed for scalability, corre
 	•	Skeleton loaders
 	•	Clean UX
 
-⸻
+## 🏗️ Architecture
 
-🏗️ Architecture
-
+```mermaid
 graph TB
     A[User - Browser] --> B[React Frontend]
     B --> C[FastAPI Backend]
@@ -90,9 +89,6 @@ graph TB
     G --> I[Generated Similar Questions]
     I --> C
     C --> B
-
-
-⸻
 
 🔧 Technologies Used
 
